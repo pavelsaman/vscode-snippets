@@ -1,0 +1,124 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Fixture and testcase": {
+		"scope": "javascript",
+	 	"prefix": "ts",
+	 	"body": [
+			"import getBaseUrl from '../../Helpers/baseUrl';",
+			"import { getEnv } from '../../Helpers/env';",
+			"",
+			"",
+			"const baseUrl = getBaseUrl();",
+			"const env = getEnv();",
+			"",
+			"",
+			"fixture `${1:fixture name}`",
+			"\t.page(baseUrl);",
+			"",
+			"test",
+			"\t.meta({",
+			"\t\tauthor: 'Pavel Saman',",
+			"\t\tcreationDate: '${2:creation date}',",
+			"\t\tenv: env,",
+			"\t\turl: baseUrl,",
+			"\t\tretired: '0',",
+			"\t\tpurpose: '${3:why?}'",
+			"\t})",
+			"\t('${4:name}', async t => {",
+			"",
+			"\t\t${0:await t}",
+			"});"
+	 	],
+	 	"description": "Creates a new fixture with one testcase in TestCafe."
+	},
+	"Testcase meta information": {
+		"scope": "javascript",
+	 	"prefix": "meta",
+	 	"body": [
+			".meta({",
+			"\tauthor: '${1:author}',",
+			"\tcreationDate: '${2:dd/mm/yyyy}',",
+			"\tenv: ${3:env},",
+			"\turl: ${4:url},",
+			"\tretired: '0',",
+			"\tpurpose: '${5:why?}'",
+			"})"
+	 	],
+	 	"description": "Adds meta information to a testcase in TestCafe."
+	},
+	"Test controller": {
+		"scope": "javascript",
+		"prefix": "await",
+		"body": [
+			"await t",
+			"\t."
+		],
+		"description": "Starts a chain of test steps in TestCafe."
+	},
+	"Describe-it test suite": {
+		"scope": "javascript",
+		"prefix": "des",
+		"body": [
+			"describe(\"${1:suite name}\", () => {",
+			"",
+			"\ttest(\"${1:test name}\", () => {",
+			"",
+			"\t\t$0",		
+			"\t});",
+			"});"
+		],
+		"description": "Creates a describe-it test suite structure."
+	},
+	"POM in TestCafe": {
+		"scope": "javascript",
+		"prefix": "pom",
+		"body": [
+			"import { Selector } from 'testcafe';",
+			"",
+			"class ${1:name} {",
+			"\tconstructor () {",
+			"\t\t$0",
+			"\t}", 
+			"}",
+			"",
+			"export default new ${1:name}();"
+		],
+		"description": "Creates a POM in TestCafe."
+	},
+	"Async function": {
+		"scope": "javascript",
+		"prefix": "as",
+		"body": [
+			"async ${1:name} () {",			
+			"\t$0",			   
+			"}"
+		],
+		"description": "Creates an async function."
+	},
+	"Testcase": {
+		"scope": "javascript",
+	 	"prefix": "tc",
+	 	"body": [			
+			"test",
+			"\t.meta({",
+			"\t\tauthor: 'Pavel Saman',",
+			"\t\tcreationDate: '${1:creation date}',",
+			"\t\tenv: env,",
+			"\t\turl: baseUrl,",
+			"\t\tretired: '0',",
+			"\t\tpurpose: '${2:why?}'",
+			"\t})",
+			"\t('${3:name}', async t => {",
+			"",
+			"\t\t${0:await t}",
+			"});"
+	 	],
+	 	"description": "Creates a new testcase in TestCafe."
+	}
+}
